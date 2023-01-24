@@ -78,6 +78,17 @@ h2{
   transition: .5s linear;
 }
 
+@media (max-width: 850px){
+  .city-wrapper {
+    padding-bottom: 80px;
+    flex-direction: column;
+    gap: 40px;    
+  }
+  .city-wrapper:nth-child(even){
+    flex-direction: column;
+  }
+}
+
 
 /*! */
 

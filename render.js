@@ -34,7 +34,7 @@ const data = [
     {
       img: './images/rome.jpg',
       city: 'Rome',
-      description: ' (Italian and Latin: Roma [ˈroːma] (listen)) is the capital city of Italy. It is also the capital of the Lazio region, the centre of the Metropolitan City of Rome, and a special comune named Comune di Roma Capitale. With 2,860,009 residents in 1,285 km2 (496.1 sq mi),[2] Rome is the country\'s most populated comune and the third most populous city in the European Union by population within city limits. The Metropolitan City of Rome, with a population of 4,355,725 residents, is the most populous metropolitan city in Italy.[3] Its metropolitan area is the third-most populous within Italy.[4] Rome is located in the central-western portion of the Italian Peninsula, within Lazio (Latium), along the shores of the Tiber. Vatican City (the smallest country in the world)[5] is an independent country inside the city boundaries of Rome, the only existing example of a country within a city. Rome is often referred to as the City of Seven Hills due to its geographic location, and also as the "Eternal City".[6] Rome is generally considered to be the "cradle of Western civilization and Christian culture", and the centre of the Catholic Church.[7][8][9] ',
+      description: ' (Italian and Latin: Roma [ˈroːma] (listen)) is the capital city of Italy. It is also the capital of the Lazio region, the centre of the Metropolitan City of Rome, and a special comune named Comune di Roma Capitale. With 2,860,009 residents in 1,285 km2 (496.1 sq mi),[2] Rome is the country\'s most populated comune and the third most populous city in the European Union by population within city limits. The Metropolitan City of Rome, with a population of 4,355,725 residents, is the most populous metropolitan city in Italy.[3] Its metropolitan area is the third-most populous within Italy.[4] Rome is located in the central-western portion of the Italian Peninsula, within Lazio (Latium), along the shores of the Tiber. Vatican City (the smallest country in the world)[5] is an independent country inside the city boundaries of Rome, the only existing example of a country within a city. ',
       link: 'https://en.wikipedia.org/wiki/Rome',
     },
     {
@@ -45,25 +45,22 @@ const data = [
     },
   ]
 
-
-  const htmlString = data.map(i => `<div class="city-wrapper">
-                                        <div class="img-block">
-                                        <div class="img-wrapper" data-reveal="left">
-                                            <img src=${i.img} alt="city">
-                                        </div>
-                                        </div>
-                                        <div class="info">
-                                            <h2 class="title" data-reveal="left">
-                                            ${i.city}
-                                            </h2>
-                                            <p data-reveal="left">
-                                            <span>${i.city}</span>${i.description}
-                                            </p>
-                                            <a href=${i.link} target="_blank" data-reveal="left">
-                                            Link to wikipedia
-                                            </a>
-                                        </div>
-                                        </div>
-  `).join('')
-
-  document.querySelector('section').innerHTML = htmlString
+  document.querySelector('section').innerHTML = data.map(i => `<div class="city-wrapper">
+                                                                <div class="img-block">
+                                                                <div class="img-wrapper" data-reveal="left">
+                                                                    <img src=${i.img} alt="city">
+                                                                </div>
+                                                                </div>
+                                                                <div class="info">
+                                                                    <h2 class="title" data-reveal="left">
+                                                                    ${i.city}
+                                                                    </h2>
+                                                                    <p data-reveal="left">
+                                                                    <span>${i.city}</span>${i.description}
+                                                                    </p>
+                                                                    <a href=${i.link} target="_blank" >
+                                                                    Link to wikipedia
+                                                                    </a>
+                                                                </div>
+                                                                </div>
+`).join('')
